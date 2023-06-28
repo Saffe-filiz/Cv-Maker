@@ -1,3 +1,3 @@
 <template>
-	<div class="lg:w-[977px] h-screen bg-red">dd</div>
+	<div class="hidden xl:inline w-[97px] h-full bg-blue-100">sideBar</div>
 </template>
