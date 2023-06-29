@@ -1,8 +1,8 @@
 <template>
   <SideBar/>
-  <BottonBar/>
+ <!-- <BottonBar/>
   <Form/>
-  <TopBar/>
+  <TopBar/>-->
 </template>
 
 

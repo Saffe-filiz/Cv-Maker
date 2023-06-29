@@ -1,3 +1,3 @@
 <template>
-	<div class="hidden xl:inline w-[97px] h-full bg-blue-100">sideBar</div>
+	<div class="hidden xl:block w-[111px] h-screen bg-yellow-400">sideBar</div>
 </template>
