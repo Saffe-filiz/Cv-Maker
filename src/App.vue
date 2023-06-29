@@ -4,6 +4,7 @@
             <TopBar/>
             <div class="w-full h-full flex flex-row">
                 <Form/>
+                <PreVewe/>
             </div>
             <BottonBar/>
         </div>
@@ -15,5 +16,6 @@
   import BottonBar from './components/TheBottonBar.vue';
   import TopBar from './components/TheTopBar.vue';
   import Form from './components/TheForm.vue';
+  import PreVewe from './components/ThePreVewe.vue';
 
 </script>
