@@ -1,8 +1,10 @@
 <template>
     <SideBar/>
-        <div class="w-full h-full flex flex-col flex-shrink  bg-blue-200">
+        <div class="w-full h-full flex flex-col flex-shrink justify-between bg-blue-200">
             <TopBar/>
-            <Form/>
+            <div class="w-full h-full flex flex-row">
+                <Form/>
+            </div>
             <BottonBar/>
         </div>
 </template>

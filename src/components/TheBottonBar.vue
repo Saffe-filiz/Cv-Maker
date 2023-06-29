@@ -1,3 +1,3 @@
 <template>
-	<div  class="w-full h-[16px] inline xl:hidden bg-orange-100">Bottom Bar</div>
+	<div  class="w-full h-[64px] inline xl:hidden bg-red-300">Bottom Bar</div>
 </template>
