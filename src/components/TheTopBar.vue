@@ -10,7 +10,11 @@
 			<div class="w-[248px] h-[45px] flex items-center justify-center">
 				<input type="text" name="cv name">
 			</div>
-			<button></button>
+			<button class="w-[70px] h-full flex items-center justify-center  border border-[#4372FF] rounded">
+				<span class="w-5 h-5">
+					<img class="w-full h-full" src="../assets/refresh.svg">
+				</span>
+			</button>
 		</div>
 		<div class="w-[653px] h-[47px] bg-red-100"></div>
 	</div>
