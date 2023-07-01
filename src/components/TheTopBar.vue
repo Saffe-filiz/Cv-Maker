@@ -20,12 +20,15 @@
 			</button>
 		</div>
 		<div class="w-[653px] h-[47px] flex justify-between">
-			<div class="w-[134px] h-full rounded flex items-center border border-[#0000001f]">
+			<div class="w-[134px] h-full rounded flex items-center border border-[#0000001f] ">
 				<span class="w-9 h-full flex items-center justify-center bg-[#f5f5f5]">
 					<img class="w-5 h-7" src="../assets/colors.svg">
 				</span>
-				<div class="w-full h-full bg-white ">
+				<div class="w-auto h-full bg-white flex items-center  pl-3.5">
 					<div class="w-12 h-7 bg-black rounded border border-red-100"></div>
+					<span class="w-6 h-6">
+						<svg viewBox="0 0 24 24" ><path d="M7 10l5 5 5-5z"></path></svg>
+					</span>
 				</div>
 			</div>
 			<div class="w-[140px] h-full bg-white rounded border border-[#0000001f] flex justify-center items-center">
