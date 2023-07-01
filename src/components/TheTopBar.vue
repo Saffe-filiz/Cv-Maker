@@ -19,14 +19,23 @@
 				</span>
 			</button>
 		</div>
-		<div class="w-[653px] h-[47px] bg-red-100 flex gap-x-[16px]">
-			<div class="w-[134px] h-full bg-orange-100 rounded flex items-center">
+		<div class="w-[653px] h-[47px] flex justify-between">
+			<div class="w-[134px] h-full rounded flex items-center border border-[#0000001f]">
 				<span class="w-9 h-full flex items-center justify-center bg-[#f5f5f5]">
 					<img class="w-5 h-7" src="../assets/colors.svg">
 				</span>
-				<div class="w-full h-full bg-white">
-					<div class="w-12 h-7 bg-black border "></div>
+				<div class="w-full h-full bg-white ">
+					<div class="w-12 h-7 bg-black rounded border border-red-100"></div>
 				</div>
+			</div>
+			<div class="w-[140px] h-full bg-white rounded border border-[#0000001f] flex justify-center items-center">
+				<button class="w-5 h-full flex items-center px-2.5 box-content">-</button>
+				<span class="w-[50px] h-full flex items-center justify-center">
+					<span class="w-[50px] h-[30px] bg-[#00000014] rounded flex items-center justify-center">
+						<p>Aa</p>
+					</span>
+				</span>
+				<button class="w-5 h-full flex items-center px-2.5 box-content">+</button>
 			</div>
 			<button class="w-[108px] h-full rounded bg-[#4372ff] flex items-center justify-center disabled:bg-[#0000001f]">
 			    <span class="w-6 h-6 mr-2.5">

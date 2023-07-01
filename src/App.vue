@@ -2,7 +2,7 @@
     <SideBar/>
         <div class="w-full h-full flex flex-col flex-shrink justify-between bg-blue-200">
             <TopBar/>
-            <div class="w-full h-full flex flex-row">
+            <div class="w-full h-[calc(100vh_-_70px)] flex flex-row">
                 <Form/>
                 <PreVewe/>
             </div>
