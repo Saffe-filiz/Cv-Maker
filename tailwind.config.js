@@ -9,6 +9,9 @@ export default {
         colors: {
             'borderColor': '#0000001f'
         },
+        fontSize: {
+          'm': '15px',
+        }
     }
  },
   plugins: [],
