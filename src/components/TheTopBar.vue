@@ -57,7 +57,7 @@
 	<div class="w-full h-16 xl:hidden bg-white px-6 flex justify-start items-center border-b border-b-borderColor">
 		<div class="w-24 h-10  flex items-center">
 			<span class="w-10 h-10 flex items-center justify-center">
-				<svg class="w-6 h-6" fill="#0000008a" viewBox="0 0 24 24" data-testid="ExpandLessIcon"><path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></svg>
+				<svg class="w-6 h-6" fill="#0000008a" viewBox="0 0 24 24"><path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></svg>
 			</span>
 			<h1 class="text-m font-bold">Details</h1>
 		</div>
