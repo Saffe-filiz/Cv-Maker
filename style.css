@@ -21,3 +21,7 @@
 .sideNav::-webkit-scrollbar-thumb:hover {
     background: red;
 }
+
+.sideBarList {
+	@apply w-[94px] h-20 rounded flex justify-center flex-col items-center cursor-pointer
+}
