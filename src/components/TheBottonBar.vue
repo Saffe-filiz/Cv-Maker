@@ -1,5 +1,5 @@
 <template>
-	<div  class="w-full h-16 inline xl:hidden absolute -bottom-16 left-0 flex justify-center border-t border-t-borderColor bg-white">
+	<div  class="w-full h-16 inline xl:hidden pt-1.5 pb-2 flex justify-center border-t border-t-borderColor bg-white">
 		<div class="max-w-[492px] w-full h-full  inline-flex mx-auto">
 				<button class="w-full h-full flex flex-col justify-center items-center">
 				<span class="w-full h-6 flex justify-center"><svg  viewBox="0 0 24 24" fill="#00000099"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"></path></svg></span>

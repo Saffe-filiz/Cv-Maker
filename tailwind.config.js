@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {    
         colors: {
-            'borderColor': '#0000001f'
+            'borderColor': '#0000001f',
+            'mobileColor': '#000000de',
+            'brandColor': '#4372ff',
         },
         fontSize: {
           'm': '15px',

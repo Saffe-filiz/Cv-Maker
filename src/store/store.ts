@@ -3,11 +3,17 @@ import { createStore } from 'vuex'
 
 const store = createStore({
 	state: {
-		test: 'test'
+		mobileMenuIsOpen: false
 	},
 
 	getters: {
-		getTest: state => state.test
+		getMobileMenu: state => state.mobileMenuIsOpen
+	},
+
+	mutations: {
+		openMobileMenu (state) {
+			state.mobileMenuIsOpen = !state.mobileMenuIsOpen
+		}
 	}
 })
 
