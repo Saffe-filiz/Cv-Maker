@@ -33,8 +33,8 @@
 					<span class="w-6 h-6 transform" :class="{'rotate-180': openColorMenu}">
 						<svg viewBox="0 0 24 24" fill="#757575" ><path d="M7 10l5 5 5-5z"></path></svg>
 					</span>
-					<div class="w-24 h-56 bg-white absolute top-full mt-2 rounded shadow-colorMenu -left-0 z-20 pt-2" 
-					v-show="openColorMenu">
+					<div class="w-24 h-56 bg-white absolute top-full mt-2 rounded shadow-colorMenu -left-0 z-20 pt-2 transition duration-200 transform -translate-y-4 opacity-0 pointer-events-none" 
+					:class="{ '-translate-y-0 opacity-100  pointer-events-auto' :openColorMenu}">
 						<ul>
 							<li v-for="(color, index) in colors" :key="index" class="flex  py-1.5 ml-4"
 							 @click="chanceCustomeColor(index)">
