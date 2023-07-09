@@ -8,7 +8,8 @@
 				<p class="text-white">CV models</p>
 			</button>
 			<div class="w-[248px] h-[45px] flex items-center justify-between border border-borderColor rounded mx-4 focus-within:border-[#4372FF] hover:border-black hover:focus-within:border-[#4372FF]">
-				<input class="w-full h-full bg-white outline-0 pl-3.5 rounded" type="text" name="cv name">
+				<input class="w-full h-full bg-white outline-0 pl-3.5 rounded" 
+				type="text" name="cv name" v-model="currentName" @input="setName">
 				<span class="w-[21.3px] h-[21.3px] mr-3.5">
 					<img class="w-full h-full" src="../assets/pen.svg">
 				</span>
@@ -24,23 +25,31 @@
 				<span class="w-9 h-full flex items-center justify-center bg-[#f5f5f5]">
 					<img class="w-5 h-7" src="../assets/colors.svg">
 				</span>
-				<div class="w-auto h-full bg-white flex items-center pl-3.5 relative cursor-pointer" @click="openColorMenu = !openColorMenu">
+				<div class="w-auto h-full bg-white flex items-center pl-3.5 relative cursor-pointer" 
+				@click="openColorMenu = !openColorMenu">
 					<div class="w-12 h-7 rounded border-2" :style="{borderColor: customeColor}" >
-						<div class="w-full h-full border border-white rounded flex items-center justify-center" :style="{ backgroundColor: customeColor}">
+						<div class="w-full h-full border border-white rounded flex items-center justify-center" 
+						:style="{ backgroundColor: customeColor}">
 							<span class="text-lg font-bold text-white">&#10003</span>
 						</div>
 					</div>
-					<span class="w-6 h-6 transform" :class="{'rotate-180': openColorMenu}">
+					<span class="w-6 h-6 transform" 
+					:class="{'rotate-180': openColorMenu}">
 						<svg viewBox="0 0 24 24" fill="#757575" ><path d="M7 10l5 5 5-5z"></path></svg>
 					</span>
 					<div class="w-24 h-56 bg-white absolute top-full mt-2 rounded shadow-colorMenu -left-0 z-20 pt-2 transition duration-200 transform -translate-y-4 opacity-0 pointer-events-none" 
 					:class="{ '-translate-y-0 opacity-100  pointer-events-auto' :openColorMenu}">
 						<ul>
-							<li v-for="(color, index) in colors" :key="index" class="flex  py-1.5 ml-4"
+							<li v-for="(color, index) in colors" 
+							:key="index" class="flex  py-1.5 ml-4"
 							 @click="chanceCustomeColor(index)">
-								<div class="w-12 h-7 rounded border-2" :style="{borderColor: color}">
-						            <div class="w-full h-full flex items-center justify-center" :class="{'border border-white': currentColorIndex == index}" :style="{ backgroundColor: color}">
-						            	<span v-show="currentColorIndex == index" class="text-lg font-bold text-white">&#10003</span>
+								<div class="w-12 h-7 rounded border-2" 
+								:style="{borderColor: color}">
+						            <div class="w-full h-full flex items-center justify-center" 
+						            :class="{'border border-white': currentColorIndex == index}" 
+						            :style="{ backgroundColor: color}">
+						            	<span v-show="currentColorIndex == index" 
+						            	class="text-lg font-bold text-white">&#10003</span>
 						            </div>
 					            </div>
 							</li>
@@ -87,13 +96,21 @@
 	import { ref, computed, onMounted } from 'vue';
 
 	const store = useStore();
+
+	// Open The Mobile Menu
 	const iconTransition = computed(() => store.getters.getMobileMenu)
+	const openMobileMenu = () => store.commit('openMobileMenu');
+    
 
-	const openMobileMenu = () => {
-		store.commit('openMobileMenu')
-	}
+    // Set Cv Name
+    let currentName = ref('')
+    const name = () => currentName.value = store.getters.getName;
+    const setName = (event) => {
+    	currentName.value = event.target.value
+    	store.commit('changeName', currentName)
+    };
 
-
+    // Set Custome Color
     const colors = ['#3870b1', '#c0392b', '#50e3c2', '#676767', '#000000'];
     let openColorMenu = ref(false);
     let currentColorIndex = ref(0)
@@ -105,6 +122,7 @@
 
 	onMounted(() => {
 		chanceCustomeColor()
+		name()
 	})
 
 </script>

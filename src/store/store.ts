@@ -17,6 +17,8 @@ const store = createStore({
 		getFontSize: state => state.data.customFontSize,
 
 		getCustomColor: state => state.data.customColor,
+
+		getName: state => state.data.name,
 	},
 
 	mutations: {
@@ -26,6 +28,11 @@ const store = createStore({
 
 		changeCostumColor (state, color) {
 			state.data.customColor = color;
+		},
+
+		changeName (state, name) {
+			console.log(name.value)
+			state.data.name = name.value;
 		}
 
 
