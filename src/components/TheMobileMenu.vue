@@ -51,15 +51,13 @@
 
 
 <script setup>
-	import {computed, ref} from 'vue';
+	import { computed } from 'vue';
 	import { useStore } from 'vuex';
 
 	const store = useStore();
 
-	let section = ref(0)
 	const currentSection = computed(() => store.getters.getCurrentSection);
 	const goToSection = ( val ) => {	
-		    section.value = val;
 		    store.commit('changeCurrentSection', val);
 		    openMobileMenu();
 		}

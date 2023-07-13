@@ -68,12 +68,8 @@
 
 	const store = useStore();
 
-	let section = ref(0)
 	const currentSection = computed(() => store.getters.getCurrentSection);
-	const goToSection = ( val ) => {	
-		    section.value = val;
-		    store.commit('changeCurrentSection', val);
-		}
+	const goToSection = ( val ) => store.commit('changeCurrentSection', val)
 
 	let sideList = ref(null);
 	let itemOne = ref(null);

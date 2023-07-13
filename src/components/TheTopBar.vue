@@ -85,7 +85,7 @@
 			<span class="w-10 h-10 flex items-center justify-center transform transition duration-200" :class="{'rotate-180': iconTransition}">
 				<svg class="w-6 h-6" fill="#0000008a" viewBox="0 0 24 24"><path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></svg>
 			</span>
-			<h2 class="text-m font-bold">Details</h2>
+			<h2 class="text-m font-bold">{{sectionNames[currentSection]}}</h2>
 		</div>
 	</div>
 </template>
@@ -96,6 +96,9 @@
 	import { useStore } from 'vuex';
 
 	const store = useStore();
+
+	const sectionNames = ['Details', 'Summary', 'Experiences', 'Education', 'Skills', 'Languages', 'Interests'];
+	const currentSection = computed(() => store.getters.getCurrentSection);
 	
 	// Open The Mobile Menu 
 	const iconTransition = computed(() => store.getters.getMobileMenu)
