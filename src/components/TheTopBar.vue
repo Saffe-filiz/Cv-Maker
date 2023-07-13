@@ -96,7 +96,8 @@
 	import { useStore } from 'vuex';
 
 	const store = useStore();
-	// Open the mobile Menu 
+	
+	// Open The Mobile Menu 
 	const iconTransition = computed(() => store.getters.getMobileMenu)
 	const openMobileMenu = () => store.commit('openMobileMenu');
     
@@ -104,6 +105,7 @@
     // Set Cv Name
     let currentName = ref('')
     const name = () => currentName.value = store.getters.getName;
+
     const setName = (event) => {
     	currentName.value = event.target.value
     	store.commit('changeName', currentName)
@@ -113,6 +115,7 @@
     const colors = ['#3870b1', '#c0392b', '#50e3c2', '#676767', '#000000'];
     let openColorMenu = ref(false);
     let currentColorIndex = ref(0)
+
 	const chanceCustomeColor = (index = 0)  => {
 		currentColorIndex.value = index
 		store.commit('changeCostumColor', colors[index])
