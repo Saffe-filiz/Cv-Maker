@@ -92,12 +92,11 @@
 
 <script setup>
    
-	import { useStore } from 'vuex';
 	import { ref, computed, onMounted } from 'vue';
+	import { useStore } from 'vuex';
 
 	const store = useStore();
-
-	// Open The Mobile Menu
+	// Open the mobile Menu 
 	const iconTransition = computed(() => store.getters.getMobileMenu)
 	const openMobileMenu = () => store.commit('openMobileMenu');
     

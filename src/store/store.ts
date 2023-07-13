@@ -4,6 +4,7 @@ import { createStore } from 'vuex'
 const store = createStore({
 	state: {
 		mobileMenuIsOpen: false,
+		currentSection: 0,
 		data: {
 			name: 'My Cv',
 			customFontSize: 'small',
@@ -19,6 +20,8 @@ const store = createStore({
 		getCustomColor: state => state.data.customColor,
 
 		getName: state => state.data.name,
+
+		getCurrentSection: state => state.currentSection
 	},
 
 	mutations: {
@@ -33,7 +36,11 @@ const store = createStore({
 		changeName (state, name) {
 			console.log(name.value)
 			state.data.name = name.value;
-		}
+		},
+
+	    changeCurrentSection (state, section) {
+	    	state.currentSection = section
+	    }
 
 
 	}
