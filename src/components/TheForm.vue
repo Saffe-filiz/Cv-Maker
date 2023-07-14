@@ -20,7 +20,7 @@
 	import MobileMenu from './TheMobileMenu.vue';
 
 	import { useStore } from 'vuex';
-	import { computed, ref } from 'vue';
+	import { computed, ref, watch } from 'vue';
 
 	const store = useStore();
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
@@ -29,9 +29,10 @@
 	const currentSection = computed(() => store.getters.getCurrentSection);
 	const goToSection = (val) => {
 		number.value += val
-		console.log(number.value)
 	    store.commit('changeCurrentSection', number.value)
 	};
+
+	watch(() => currentSection.value, (v) => number.value = v)
 
 
 </script>
