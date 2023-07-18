@@ -58,13 +58,13 @@
 				</div>
 			</div>
 			<div class="w-[140px] h-full bg-white rounded border border-borderColor hidden xl:flex justify-center items-center">
-				<button class="w-5 h-full flex items-center px-2.5 box-content">-</button>
+				<button class="w-5 h-full flex items-center px-2.5 box-content" :disabled="currentFontSize == 0" @click="setCustomeFontSize(-1)">-</button>
 				<span class="w-[50px] h-full flex items-center justify-center">
 					<span class="w-[50px] h-[30px] bg-[#00000014] rounded flex items-center justify-center">
-						<p>Aa</p>
+						<p :style="{fontSize: getFontSize}">Aa</p>
 					</span>
 				</span>
-				<button class="w-5 h-full flex items-center px-2.5 box-content">+</button>
+				<button class="w-5 h-full flex items-center px-2.5 box-content" :disabled="currentFontSize == 2" @click="setCustomeFontSize(+1)">+</button>
 			</div>
 			<button class="w-[108px] h-full rounded bg-[#4372ff] hidden xl:flex items-center justify-center disabled:bg-borderColor">
 			    <span class="w-6 h-6 mr-2.5">
@@ -114,6 +114,14 @@
     	store.commit('changeName', currentName)
     };
 
+    // Set Custome Font Size
+    let currentFontSize = ref(1)
+    const getFontSize = computed(() => store.getters.getFontSize);
+    const setCustomeFontSize = (index) => {
+    	currentFontSize.value += index
+    	store.commit('changeFontSize', currentFontSize.value)
+    };
+
     // Set Custome Color
     const colors = ['#3870b1', '#c0392b', '#50e3c2', '#676767', '#000000'];
     let openColorMenu = ref(false);
@@ -127,7 +135,7 @@
 
 	onMounted(() => {
 		chanceCustomeColor()
-		name()
+		name();
 	})
 
 </script>

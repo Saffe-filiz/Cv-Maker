@@ -7,7 +7,7 @@ const store = createStore({
 		currentSection: 0,
 		data: {
 			name: 'My Cv',
-			customFontSize: 'small',
+			customFontSize: '13px',
 			customColor: '#3870b1',
 		}
 	},
@@ -21,7 +21,7 @@ const store = createStore({
 
 		getName: state => state.data.name,
 
-		getCurrentSection: state => state.currentSection
+		getCurrentSection: state => state.currentSection,
 	},
 
 	mutations: {
@@ -40,6 +40,11 @@ const store = createStore({
 
 	    changeCurrentSection (state, section) {
 	    	state.currentSection = section
+	    },
+
+	    changeFontSize (state, index = 1) {
+	    	let sizes = ['11px', '13px', '16px'];
+	    	state.data.customFontSize = sizes[index];
 	    }
 
 
