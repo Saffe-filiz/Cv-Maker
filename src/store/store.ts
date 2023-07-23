@@ -5,6 +5,7 @@ const store = createStore({
 	state: {
 		mobileMenuIsOpen: false,
 		currentSection: 0,
+		isSaved: false,
 		data: {
 			name: 'My Cv',
 			customFontSize: '13px',
@@ -22,6 +23,10 @@ const store = createStore({
 		getName: state => state.data.name,
 
 		getCurrentSection: state => state.currentSection,
+
+		getCvData: state => state.data,
+
+		getIsSaved: state => state.isSaved,
 	},
 
 	mutations: {
@@ -45,7 +50,11 @@ const store = createStore({
 	    changeFontSize (state, index = 1) {
 	    	let sizes = ['11px', '13px', '16px'];
 	    	state.data.customFontSize = sizes[index];
-	    }
+	    },
+
+	    saveChanges ( state ) {
+	    	localStorage.setItem([state.data.name], JSON.stringify(state.data));
+	    }, 
 
 
 	}
