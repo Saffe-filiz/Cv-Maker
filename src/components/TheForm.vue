@@ -29,7 +29,7 @@
 	const currentSection = computed(() => store.getters.getCurrentSection);
 	const goToSection = (val) => {
 		number.value += val
-	    store.commit('changeCurrentSection', number.value)
+	    store.commit('setCurrentSection', number.value)
 	};
 
 	watch(() => currentSection.value, (v) => number.value = v)

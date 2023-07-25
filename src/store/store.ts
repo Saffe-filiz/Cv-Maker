@@ -34,20 +34,19 @@ const store = createStore({
 			state.mobileMenuIsOpen = !state.mobileMenuIsOpen
 		},
 
-		changeCostumColor (state, color) {
+		setCostumColor (state, color) {
 			state.data.customColor = color;
 		},
 
-		changeName (state, name) {
-			console.log(name.value)
+		setName (state, name) {
 			state.data.name = name.value;
 		},
 
-	    changeCurrentSection (state, section) {
+	    setCurrentSection (state, section) {
 	    	state.currentSection = section
 	    },
 
-	    changeFontSize (state, index = 1) {
+	    setFontSize (state, index = 1) {
 	    	let sizes = ['11px', '13px', '16px'];
 	    	state.data.customFontSize = sizes[index];
 	    },
