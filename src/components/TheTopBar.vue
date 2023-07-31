@@ -9,12 +9,12 @@
 			</button>
 			<div class="w-[248px] h-[45px] flex items-center justify-between border border-borderColor rounded mx-4 focus-within:border-[#4372FF] hover:border-black hover:focus-within:border-[#4372FF]">
 				<input class="w-full h-full bg-white outline-0 pl-3.5 rounded" 
-				type="text" name="cv name" v-model="currentName" @input="setName">
+				type="text" name="cv name"  @input="setName" :value="name">
 				<span class="w-[21.3px] h-[21.3px] mr-3.5">
 					<img class="w-full h-full" src="../assets/pen.svg">
 				</span>
 			</div>
-			<button class="w-[70px] h-full flex items-center justify-center  border border-[#4372FF] rounded">
+			<button class="w-[70px] h-full flex items-center justify-center  border border-[#4372FF] rounded" @click="reset()">
 				<span class="w-5 h-5">
 					<img class="w-full h-full" src="../assets/refresh.svg">
 				</span>
@@ -102,6 +102,9 @@
     let localeData = ref()
     
     const getCvData = computed(() => store.getters.getCvData)
+
+    // Reset Cv Data 
+    const reset = () => store.commit('resetCvData');
     
     //Save Cv Data
 	const saveChanges = () => {
@@ -122,7 +125,7 @@
 
     // Set Cv Name
     let currentName = ref('')
-    const name = () => currentName.value = store.getters.getName;
+    const name = computed(() => store.getters.getName);
 
     const setName = (event) => {
     	currentName.value = event.target.value
@@ -159,7 +162,6 @@
 
 	onMounted(() => {
 		chanceCustomeColor()
-		name();
 		dataIsExist()
 	});
 
