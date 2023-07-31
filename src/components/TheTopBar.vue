@@ -102,13 +102,15 @@
     let localeData = ref()
     
     const getCvData = computed(() => store.getters.getCvData)
-
+    
+    //Save Cv Data
 	const saveChanges = () => {
 	    store.commit('saveChanges');
-	    localeData.value = localStorage.getItem(currentName.value)
+	    localeData.value = localStorage.getItem('savedData')
 	}
-
 	const isSaved = computed(() =>  localeData.value == JSON.stringify(getCvData.value));
+
+	// Set Section
 
 	const sectionNames = ['Details', 'Summary', 'Experiences', 'Education', 'Skills', 'Languages', 'Interests'];
 	const currentSection = computed(() => store.getters.getCurrentSection);
@@ -148,8 +150,10 @@
 
 
 	const dataIsExist = () => {
-		if(!localStorage.getItem(currentName.value)){
+		if(!localStorage.getItem('savedData')){
 			saveChanges()
+		}else {
+			store.commit('setCvData', JSON.parse(localStorage.getItem('savedData')) )
 		}
 	}
 

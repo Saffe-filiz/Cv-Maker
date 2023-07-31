@@ -1,5 +1,11 @@
 import { createStore } from 'vuex'
 
+const defultCvData = {
+	name: 'My Cv',
+	customFontSize: '13px',
+	customColor: '#3870b1',
+}
+
 
 const store = createStore({
 	state: {
@@ -52,8 +58,16 @@ const store = createStore({
 	    },
 
 	    saveChanges ( state ) {
-	    	localStorage.setItem([state.data.name], JSON.stringify(state.data));
+	    	localStorage.setItem('savedData', JSON.stringify(state.data));
 	    }, 
+
+	    setCvData ( state, data ) {
+	    	state.data = data
+	    },
+
+	    resetCvData ( state ) {
+	    	state.data = defultCvData;
+	    }
 
 
 	}

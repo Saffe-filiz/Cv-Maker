@@ -58,7 +58,7 @@
 
 	const currentSection = computed(() => store.getters.getCurrentSection);
 	const goToSection = ( val ) => {	
-		    store.commit('changeCurrentSection', val);
+		    store.commit('setCurrentSection', val);
 		    openMobileMenu();
 		}
 

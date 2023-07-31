@@ -71,7 +71,7 @@
 
     // Chance Sections
 	const currentSection = computed(() => store.getters.getCurrentSection);
-	const goToSection = ( val ) => store.commit('changeCurrentSection', val)
+	const goToSection = ( val ) => store.commit('setCurrentSection', val)
 
 	//Side Bar Slider
 
@@ -105,7 +105,6 @@
 	const sectionScroll = () => list.value = !list.value
     
    watch(()  => currentSection.value, (v) => {
-   	console.log(v)
    	   list.value.children[v].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
    })
     
