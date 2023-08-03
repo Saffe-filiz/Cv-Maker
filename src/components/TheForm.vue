@@ -1,8 +1,9 @@
 <template>
 	<div class="w-full h-full relative flex flex-col justify-between overflow-y-auto">
-	    <div class="w-full h-full bg-red-500 overflow-hidden">
+	    <div class="w-full h-full overflow-hidden">
 	    	<MobileMenu v-show="openMobileMenu"/>
 	    </div>	
+        <Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>
 		<div class="w-full bg-white  p-4 xl:p-8 border-t border-borderColor">
 			<div class="w-full  flex justify-between">
 				<button class="h-[38px] px-6 text-[#4372ff] bg-white border border-[#4372ff] rounded"
@@ -18,6 +19,7 @@
 <script setup>
     import BottonBar from './TheBottonBar.vue';
 	import MobileMenu from './TheMobileMenu.vue';
+	import Input from './Input.vue';
 
 	import { useStore } from 'vuex';
 	import { computed, ref, watch } from 'vue';
@@ -25,12 +27,14 @@
 	const store = useStore();
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
     
-    let number = ref(0)
+    let number = ref(0);
+    let value = ref('')
 	const currentSection = computed(() => store.getters.getCurrentSection);
 	const goToSection = (val) => {
 		number.value += val
 	    store.commit('setCurrentSection', number.value)
 	};
+
 
 	watch(() => currentSection.value, (v) => number.value = v)
 
