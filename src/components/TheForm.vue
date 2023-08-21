@@ -1,10 +1,12 @@
 <template>
 	<div class="w-full h-full relative flex flex-col justify-between overflow-y-auto">
-	    <div class="w-full h-full overflow-hidden">
+	    <div class="w-auto h-auto overflow-hidden">
 	    	<MobileMenu v-show="openMobileMenu"/>
+	    </div>
+	    <div class="w-full h-full bg-red-100 px-2 xl:px-8" v-show="!openMobileMenu">
+	    	<!--<Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>-->
+            <button @click="addNew">Addd</button>
 	    </div>	
-        <!--<Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>-->
-        <button @click="addNew">Addd</button>
 		<div class="w-full bg-white  p-4 xl:p-8 border-t border-borderColor">
 			<div class="w-full  flex justify-between">
 				<button class="h-[38px] px-6 text-[#4372ff] bg-white border border-[#4372ff] rounded"
