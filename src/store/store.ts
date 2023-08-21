@@ -4,6 +4,13 @@ const defultCvData = {
 	name: 'My Cv',
 	customFontSize: '13px',
 	customColor: '#3870b1',
+	interestsDisplay: false,
+	experiences: [],
+	competencies: [],
+	formations: [],
+	identity: {},
+	interests: [],
+	languages: [],
 }
 
 
@@ -12,11 +19,7 @@ const store = createStore({
 		mobileMenuIsOpen: false,
 		currentSection: 0,
 		isSaved: false,
-		data: {
-			name: 'My Cv',
-			customFontSize: '13px',
-			customColor: '#3870b1',
-		}
+		data: {}
 	},
 
 	getters: {
@@ -67,6 +70,11 @@ const store = createStore({
 
 	    resetCvData ( state ) {
 	    	state.data = defultCvData;
+	    },
+
+	    setNewData ( state, name ) {
+	    	console.log(name)
+	    	state.data[name].push({one: name})
 	    }
 
 

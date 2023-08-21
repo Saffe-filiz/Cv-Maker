@@ -3,7 +3,8 @@
 	    <div class="w-full h-full overflow-hidden">
 	    	<MobileMenu v-show="openMobileMenu"/>
 	    </div>	
-        <Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>
+        <!--<Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>-->
+        <button @click="addNew">Addd</button>
 		<div class="w-full bg-white  p-4 xl:p-8 border-t border-borderColor">
 			<div class="w-full  flex justify-between">
 				<button class="h-[38px] px-6 text-[#4372ff] bg-white border border-[#4372ff] rounded"
@@ -28,15 +29,41 @@
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
     
     let number = ref(0);
+    let sectionName = ref('');
     let value = ref('')
 	const currentSection = computed(() => store.getters.getCurrentSection);
 	const goToSection = (val) => {
 		number.value += val
 	    store.commit('setCurrentSection', number.value)
 	};
+    
 
 
-	watch(() => currentSection.value, (v) => number.value = v)
+    const addNew = () => {
+    	console.log(currentSection.value)
+    	store.commit('setNewData', sectionName.value);
+    }
+
+	watch(() => currentSection.value, (num) => {
+		number.value = num
+		switch(num){
+		case 2:
+		   sectionName.value = 'experiences';
+		   break;
+		case 3:
+			sectionName.value = 'formations';
+			break;
+		case 4:
+		    sectionName.value = 'competencies';
+		    break;
+		 case 5: 
+		    sectionName.value = 'languages';
+		    break;
+		 case 6:
+		 	sectionName.value = 'interests';
+
+		}
+	})
 
 
 </script>
