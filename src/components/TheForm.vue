@@ -3,9 +3,9 @@
 	    <div class="w-auto h-auto overflow-hidden">
 	    	<MobileMenu v-show="openMobileMenu"/>
 	    </div>
-	    <div class="w-full h-full bg-red-100 px-2 xl:px-8" v-show="!openMobileMenu">
+	    <div class="w-full h-full px-2 xl:px-8" v-show="!openMobileMenu">
 	    	<!--<Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>-->
-            <button @click="addNew">Addd</button>
+            <button class="w-full h-[54px] border-dashed border-2 border-brandColor rounded"  @click="addNew">Add {{currentSectionName}}</button>
 	    </div>	
 		<div class="w-full bg-white  p-4 xl:p-8 border-t border-borderColor">
 			<div class="w-full  flex justify-between">
@@ -31,7 +31,8 @@
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
     
     let number = ref(0);
-    let sectionName = ref('');
+    let dataName = ref('');
+    let currentSectionName = ref('')
     let value = ref('')
 	const currentSection = computed(() => store.getters.getCurrentSection);
 	const goToSection = (val) => {
@@ -43,28 +44,34 @@
 
     const addNew = () => {
     	console.log(currentSection.value)
-    	store.commit('setNewData', sectionName.value);
+    	store.commit('setNewData', dataName.value);
     }
 
 	watch(() => currentSection.value, (num) => {
 		number.value = num
 		switch(num){
 		case 2:
-		   sectionName.value = 'experiences';
+		   dataName.value = 'experiences';
+		   currentSectionName.value = 'Potition'
 		   break;
 		case 3:
-			sectionName.value = 'formations';
+			dataName.value = 'formations';
+			currentSectionName.value = 'Education'
 			break;
 		case 4:
-		    sectionName.value = 'competencies';
+		    dataName.value = 'competencies';
+		    currentSectionName.value = 'Skill'
 		    break;
 		 case 5: 
-		    sectionName.value = 'languages';
+		    dataName.value = 'languages';
+		    currentSectionName.value = 'Languages'
 		    break;
 		 case 6:
-		 	sectionName.value = 'interests';
+		 	dataName.value = 'interests';
+		 	currentSectionName.value = 'Interests'
 
-		}
+		};
+
 	})
 
 
