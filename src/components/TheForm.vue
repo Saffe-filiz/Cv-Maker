@@ -7,7 +7,25 @@
 	    	<!--<Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>
             <button class="w-full h-[54px] border-dashed border-2 border-brandColor rounded"  @click="addNew">Add {{currentSectionName}}</button>-->
             <div v-if="step == 0">
-            	
+            	<h1>test 0</h1>
+            </div>
+            <div v-else-if="step == 1">
+            	<h1>test 1</h1>
+            </div>
+            <div v-else-if="step == 2">
+            	<h1>test 2</h1>
+            </div>
+            <div v-else-if="step == 3">
+            	<h1>test 3</h1>
+            </div>
+            <div v-else-if="step == 4">
+            	<h1>test 4</h1>
+            </div>
+            <div v-else-if="step == 5">
+            	<h1>test 5</h1>
+            </div>
+            <div v-else-if="step == 6">
+            	<h1>test 6</h1>
             </div>
 	    </div>	
 		<div class="w-full bg-white  p-4 xl:p-8 border-t border-borderColor">
