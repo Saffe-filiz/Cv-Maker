@@ -17,7 +17,7 @@ const defultCvData = {
 const store = createStore({
 	state: {
 		mobileMenuIsOpen: false,
-		currentSection: 0,
+		step: 0,
 		isSaved: false,
 		data: {}
 	},
@@ -31,7 +31,7 @@ const store = createStore({
 
 		getName: state => state.data.name,
 
-		getCurrentSection: state => state.currentSection,
+		getCurrentStep: state => state.step,
 
 		getCvData: state => state.data,
 
@@ -51,8 +51,8 @@ const store = createStore({
 			state.data.name = name.value;
 		},
 
-	    setCurrentSection (state, section) {
-	    	state.currentSection = section
+	    setCurrentSection (state, step) {
+	    	state.step = step
 	    },
 
 	    setFontSize (state, index = 1) {

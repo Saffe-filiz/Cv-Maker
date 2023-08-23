@@ -4,15 +4,18 @@
 	    	<MobileMenu v-show="openMobileMenu"/>
 	    </div>
 	    <div class="w-full h-full px-2 xl:px-8" v-show="!openMobileMenu">
-	    	<!--<Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>-->
-            <button class="w-full h-[54px] border-dashed border-2 border-brandColor rounded"  @click="addNew">Add {{currentSectionName}}</button>
+	    	<!--<Input :label="'Test'" :placeholder="'testValue'" @inputValue="(val) => v"/>
+            <button class="w-full h-[54px] border-dashed border-2 border-brandColor rounded"  @click="addNew">Add {{currentSectionName}}</button>-->
+            <div v-if="step == 0">
+            	
+            </div>
 	    </div>	
 		<div class="w-full bg-white  p-4 xl:p-8 border-t border-borderColor">
 			<div class="w-full  flex justify-between">
 				<button class="h-[38px] px-6 text-[#4372ff] bg-white border border-[#4372ff] rounded"
-				:class="{'invisible' : currentSection == 0}" :disabled="currentSection == 0" @click="goToSection(-1)">GO BACK</button>
+				:class="{'invisible' : currentStep == 0}" :disabled="currentStep == 0" @click="goToSection(-1)">GO BACK</button>
 				<button class="h-[38px] px-6 text-white bg-[#4372ff] border border-[#4372ff] rounded shadow-[0px_4px_7px_0px_rgba(67,114,255,0.3)]"
-				:class="{'invisible' : currentSection == 6}" :disabled="currentSection == 6" @click="goToSection(+1)">NEXT</button>
+				:class="{'invisible' : currentStep == 6}" :disabled="currentStep == 6" @click="goToSection(+1)">NEXT</button>
 			</div>
 		</div>
 		<BottonBar/>
@@ -30,25 +33,25 @@
 	const store = useStore();
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
     
-    let number = ref(0);
+    let step = ref(0);
     let dataName = ref('');
     let currentSectionName = ref('')
     let value = ref('')
-	const currentSection = computed(() => store.getters.getCurrentSection);
+	const currentStep = computed(() => store.getters.getCurrentStep);
 	const goToSection = (val) => {
-		number.value += val
-	    store.commit('setCurrentSection', number.value)
+		step.value += val
+	    store.commit('setCurrentSection', step.value)
 	};
     
 
 
     const addNew = () => {
-    	console.log(currentSection.value)
+    	console.log(currentStep.value)
     	store.commit('setNewData', dataName.value);
     }
 
-	watch(() => currentSection.value, (num) => {
-		number.value = num
+	watch(() => currentStep.value, (num) => {
+		step.value = num
 		switch(num){
 		case 2:
 		   dataName.value = 'experiences';
