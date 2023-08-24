@@ -51,7 +51,7 @@ const store = createStore({
 			state.data.name = name.value;
 		},
 
-	    setCurrentSection (state, step) {
+	    setCurrentStep (state, step) {
 	    	state.step = step
 	    },
 

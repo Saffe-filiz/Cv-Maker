@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full h-full bg-white overflow-y-auto">
+	<div class="w-full bg-white overflow-y-auto">
 		<div class="">
 			<ul>
 			<li class="mobileMenuList"  @click="goToSection(0)">
@@ -58,7 +58,7 @@
 
 	const currentStep = computed(() => store.getters.getCurrentStep);
 	const goToSection = ( val ) => {	
-		    store.commit('setCurrentSection', val);
+		    store.commit('setCurrentStep', val);
 		    openMobileMenu();
 		}
 

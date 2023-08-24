@@ -14,5 +14,4 @@
 
 	const input = defineProps(['label', 'placeholder'])
 
-	const t = (e) => console.log
 </script>

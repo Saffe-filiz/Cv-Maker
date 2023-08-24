@@ -1,5 +1,6 @@
 <template>
-	<div class="flex w-full h-16 xl:h-[70px] bg-white px-6 justify-end xl:justify-between items-center xl:border-b xl:border-b-borderColor">
+	<div class="w-auto h-auto">
+		<div class="flex w-full h-16 xl:h-[70px] bg-white px-6 justify-end xl:justify-between items-center xl:border-b xl:border-b-borderColor">
 		<div class="w-auto h-[47px] hidden xl:flex items-center">
 			<button class="w-auto h-[45px] px-6 flex items-center justify-center bg-[#4372ff] rounded">
 				<span class="mr-2.5 w-6 h-6">
@@ -90,17 +91,16 @@
 			<h2 class="text-m font-bold">{{sectionNames[currentSection]}}</h2>
 		</div>
 	</div>
+	</div>
 </template>
 
 <script setup>
-   
+    import MobileMenu from './TheMobileMenu.vue';
 	import { ref, computed, onMounted } from 'vue';
 	import { useStore } from 'vuex';
 
 	const store = useStore();
-
-    let localeData = ref()
-    
+    let localeData = ref();
     const getCvData = computed(() => store.getters.getCvData)
 
     // Reset Cv Data 
@@ -116,7 +116,7 @@
 	// Set Section
 
 	const sectionNames = ['Details', 'Summary', 'Experiences', 'Education', 'Skills', 'Languages', 'Interests'];
-	const currentSection = computed(() => store.getters.getCurrentSection);
+	const currentSection = computed(() => store.getters.getCurrentStep);
 	
 	// Open The Mobile Menu 
 	const iconTransition = computed(() => store.getters.getMobileMenu)

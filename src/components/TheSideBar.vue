@@ -71,7 +71,7 @@
 
     // Chance Sections
 	const currentStep = computed(() => store.getters.getCurrentStep);
-	const goToSection = ( val ) => store.commit('setCurrentSection', val)
+	const goToSection = ( val ) => store.commit('setCurrentStep', val)
 
 	//Side Bar Slider
 
