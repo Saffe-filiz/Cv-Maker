@@ -1,6 +1,6 @@
 <template>
-	<div class="w-full h-full flex flex-col overflow-hidden">
-		<div class="w-full min-h-[calc(100%_-_136px)] h-auto overflow-auto">
+	<div class="w-full h-full flex flex-col overflow-hidden bg-red-100">
+		<div class="w-full min-h-[calc(100%_-_136px)] h-auto xl:min-h-[calc(100%_-_106px)] overflow-auto">
 			<MobileMenu v-show="openMobileMenu"/>
 			<div class="py-6 px-4 xl:py-2 xl:px-8" v-show="!openMobileMenu">
 				<div v-if="step == 0">
