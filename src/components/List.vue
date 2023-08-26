@@ -8,7 +8,7 @@
 		     v-for="(data, index) in step.data"
 		     :key="index">
 		     	{{data.one}}
-		     	<button @click="deletListItem">delet</button>
+		     	<button @click="deletListItem(index)">delet</button>
 		     </li>
 	    </ul>
 	    <button class="w-full h-[54px] border-dashed border-2 border-brandColor rounded"  @click="addNew">Add {{step.name}}</button>
@@ -22,10 +22,7 @@
     const store = useStore();
 	const step = defineProps(['dataName', 'name', 'data'])
 
-	const deletListItem = (index: number) => {
-		step.data.splice(index, 1)
-
-	}
+	const deletListItem = (index: number) => step.data.splice(index, 1);
 
     const addNew = () => store.commit('setNewData', step.dataName);
 </script>
