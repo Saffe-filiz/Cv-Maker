@@ -10,19 +10,19 @@
             	    <h1>test 1</h1>
                 </div>
                 <div v-else-if="step == 2">
-            	     <List :stepName="'experiences'" :name="'Potition'"/>
+            	     <List :dataName="'experiences'" :name="'Potition'" :data="cvData.experiences"/>
                 </div>
                 <div v-else-if="step == 3">
-            	     <List :stepName="'formations'" :name="'Education'"/>
+            	     <List :dataName="'formations'" :name="'Education'" :data="cvData.formations"/>
                 </div>
                 <div v-else-if="step == 4">
-            	     <List :stepName="'competencies'" :name="'Skill'"/>
+            	     <List :dataName="'competencies'" :name="'Skill'" :data="cvData.competencies"/>
                 </div>
                 <div v-else-if="step == 5">
-                  	<List :stepName="'languages'" :name="'Languages'"/>
+                  	<List :dataName="'languages'" :name="'Languages'" :data="cvData.languages"/>
                 </div>
                 <div v-else-if="step == 6">
-            	    <List :stepName="'interests'" :name="'interests'"/>
+            	    <List :dataName="'interests'" :name="'interests'" :data="cvData.interests"/>
                 </div>
 			</div>
        </div>
@@ -50,9 +50,10 @@
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
     
     let step = ref(0);
-    let dataName = ref('');
+   // let dataName = ref('');
     let currentStepName = ref('')
-    let value = ref('')
+    //let value = ref('');
+    const cvData = computed(() => store.getters.getCvData)
 	const currentStep = computed(() => store.getters.getCurrentStep);
 	const goToSection = (val) => {
 		step.value += val
@@ -61,14 +62,11 @@
     
 
 
-    const addNew = () => {
-    	console.log(currentStepName.value)
-    	store.commit('setNewData', dataName.value);
-    }
+    const addNew = () => store.commit('setNewData', dataName.value);
 
 	watch(() => currentStep.value, (num) => {
 		step.value = num
-		switch(num){
+		/*switch(num){
 		case 2:
 		   dataName.value = 'experiences';
 		   currentStepName.value = 'Potition'
@@ -89,7 +87,7 @@
 		 	dataName.value = 'interests';
 		 	currentStepName.value = 'Interests'
 
-		};
+		};*/
 
 	})
 

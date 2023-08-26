@@ -4,31 +4,28 @@
 			<h2>{{step.name}}</h2>
 		</div>
 		<ul class="pb-4">
-		     <li class="w-full h-14 bg-white py-2 pl-4 pr-12 mb-4 flex items-center rounded border border-borderColor">
-		     	test1
+		     <li class="w-full h-14 bg-white py-2 pl-4 pr-12 mb-4 flex items-center rounded border border-borderColor flex items-center justify-between" 
+		     v-for="(data, index) in step.data"
+		     :key="index">
+		     	{{data.one}}
+		     	<button @click="deletListItem">delet</button>
 		     </li>
-		     <li class="w-full h-14 bg-white py-2 pl-4 pr-12 mb-4 flex items-center rounded border border-borderColor">
-		     	test1
-		     </li>
-		     <li class="w-full h-14 bg-white py-2 pl-4 pr-12 mb-4 flex items-center rounded border border-borderColor">
-		     	test1
-		     </li>
-		     
-		     
 	    </ul>
 	    <button class="w-full h-[54px] border-dashed border-2 border-brandColor rounded"  @click="addNew">Add {{step.name}}</button>
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 	import { useStore } from 'vuex';
 	import { defineProps } from 'vue';
 
-	const step = defineProps(['stepName', 'name'])
+    const store = useStore();
+	const step = defineProps(['dataName', 'name', 'data'])
 
-	const store = useStore();
-	
-    const addNew = () => {
-    	store.commit('setNewData', step.stepName);
-    }
+	const deletListItem = (index: number) => {
+		step.data.splice(index, 1)
+
+	}
+
+    const addNew = () => store.commit('setNewData', step.dataName);
 </script>

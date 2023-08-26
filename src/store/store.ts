@@ -19,7 +19,18 @@ const store = createStore({
 		mobileMenuIsOpen: false,
 		step: 0,
 		isSaved: false,
-		data: {}
+		data: {
+				name: 'My Cv',
+	customFontSize: '13px',
+	customColor: '#3870b1',
+	interestsDisplay: false,
+	experiences: [],
+	competencies: [],
+	formations: [],
+	identity: {},
+	interests: [],
+	languages: [],
+		}
 	},
 
 	getters: {
@@ -56,8 +67,7 @@ const store = createStore({
 	    },
 
 	    setFontSize (state, index = 1) {
-	    	let sizes = ['11px', '13px', '16px'];
-	    	state.data.customFontSize = sizes[index];
+	    	state.data.customFontSize = ['11px', '13px', '16px'][index];
 	    },
 
 	    saveChanges ( state ) {
@@ -73,8 +83,7 @@ const store = createStore({
 	    },
 
 	    setNewData ( state, name ) {
-	    	console.log(name)
-	    	state.data[name].push({one: name})
+	    	state.data[name].push({one: [state.data[name].length]})
 	    }
 
 

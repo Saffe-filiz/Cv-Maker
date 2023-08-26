@@ -1,8 +1,8 @@
 <template>
     <SideBar/>
-        <div class="w-full h-auto xl:h-screen flex justify-between flex-col overflow-hidden">
+        <div class="w-full h-auto xl:h-[calc(100vh_-_70px) flex justify-between flex-col overflow-hidden">
             <TopBar/>
-            <div class="w-full h-[calc(100%_-_126px)] xl:h-full flex flex-row ">
+            <div class="w-full h-[calc(100%_-_126px)] xl:h-[calc(100%_-_70px)] flex flex-row ">
                 <Form/>
                 <PreVewe/>
             </div>
