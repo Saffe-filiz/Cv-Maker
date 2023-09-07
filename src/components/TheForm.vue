@@ -11,26 +11,26 @@
 						<div class="w-[calc(100%_-_200px)] flex flex-col gap-y-2">
 							<div class="flex flex-col rounded bg-transparent">
 	                            <label>First Name</label>
-	                            <input type="text" name="name" class="inputStyle"  autocomplete="off" placeholder="Bob">
+	                            <input type="text" name="name" class="inputStyle" autocomplete="off" placeholder="Bob"  v-model="idantity.first_name">
 	                        </div>
 	                        <div class="flex flex-col rounded bg-transparent">
 	                            <label>Surename</label>
-	                            <input type="text" name="surename" class="inputStyle"  autocomplete="off" placeholder="Marley">
+	                            <input type="text" name="surename" class="inputStyle"  autocomplete="off" placeholder="Marley" v-model="idantity.last_name">
 	                        </div>
 						</div>
 					</div>
             	    <div class="w-full h-auto flex flex-col gap-y-4">
             	  	    <div class="flex flex-col rounded bg-transparent">
 	                        <label>Email</label>
-	                        <input type="text" name="email" class="inputStyle"  autocomplete="off" placeholder="Name">
+	                        <input type="text" name="email" class="inputStyle"  autocomplete="off" placeholder="Email" v-model="idantity.email">
 	                    </div>
 	                    <div class="flex flex-col rounded bg-transparent">
 	                        <label>Adress</label>
-	                        <input type="text" name="adress" class="inputStyle"  autocomplete="off" placeholder="15 Russell Rd, SHIPHAM BS25 6LF, United Kingdom">
+	                        <input type="text" name="adress" class="inputStyle"  autocomplete="off" placeholder="15 Russell Rd, SHIPHAM BS25 6LF, United Kingdom" v-model="idantity.address">
 	                    </div>
 	                    <div class="flex flex-col rounded bg-transparent">
 	                        <label>Phone</label>
-	                        <input type="tel" name="phone" class="inputStyle"  autocomplete="off" placeholder="+44 79 4292 7473">
+	                        <input type="tel" name="phone" class="inputStyle"  autocomplete="off" placeholder="+44 79 4292 7473" v-model="idantity.phone">
 	                    </div>
             	    </div>
                 </div>
@@ -72,7 +72,7 @@
 	import List from './List.vue';
 
 	import { useStore } from 'vuex';
-	import { computed, ref, watch } from 'vue';
+	import { computed, ref, watch, reactive } from 'vue';
 
 	const store = useStore();
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
@@ -80,7 +80,17 @@
     let step = ref(0);
     let currentStepName = ref('')
 
-    const data = computed(() => store.getters.getCvData)
+    let idantity = reactive( {
+		        address: '',
+                checkbox1: false,
+                driving_licence: '',
+                email: '',
+                first_name: '',
+                last_name: '',
+                phone: '',
+	        })
+
+    const data = computed(() =>  store.getters.getCvData)
 	const currentStep = computed(() => store.getters.getCurrentStep);
 	const goToSection = (val) => {
 		step.value += val
