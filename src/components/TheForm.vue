@@ -1,28 +1,56 @@
 <template>
-	<div class="w-full h-full flex flex-col overflow-hidden bg-red-100">
+	<div class="w-full h-full flex flex-col overflow-hidden">
 		<div class="w-full min-h-[calc(100%_-_136px)] h-auto xl:min-h-[calc(100%_-_106px)] overflow-auto">
 			<MobileMenu v-show="openMobileMenu"/>
 			<div class="py-6 px-4 xl:py-2 xl:px-8" v-show="!openMobileMenu">
 				<div v-if="step == 0">
-            	    <h1>test 0</h1>
+					<div class="flex flex-row mb-5">
+						<div class="w-48 h-44 bg-blue-100 mr-5 flex items-center justify-between ">
+							img
+						</div>
+						<div class="w-[calc(100%_-_200px)] flex flex-col gap-y-2">
+							<div class="flex flex-col rounded bg-transparent">
+	                            <label>First Name</label>
+	                            <input type="text" name="name" class="inputStyle"  autocomplete="off" placeholder="Bob">
+	                        </div>
+	                        <div class="flex flex-col rounded bg-transparent">
+	                            <label>Surename</label>
+	                            <input type="text" name="surename" class="inputStyle"  autocomplete="off" placeholder="Marley">
+	                        </div>
+						</div>
+					</div>
+            	    <div class="w-full h-auto flex flex-col gap-y-4">
+            	  	    <div class="flex flex-col rounded bg-transparent">
+	                        <label>Email</label>
+	                        <input type="text" name="email" class="inputStyle"  autocomplete="off" placeholder="Name">
+	                    </div>
+	                    <div class="flex flex-col rounded bg-transparent">
+	                        <label>Adress</label>
+	                        <input type="text" name="adress" class="inputStyle"  autocomplete="off" placeholder="15 Russell Rd, SHIPHAM BS25 6LF, United Kingdom">
+	                    </div>
+	                    <div class="flex flex-col rounded bg-transparent">
+	                        <label>Phone</label>
+	                        <input type="tel" name="phone" class="inputStyle"  autocomplete="off" placeholder="+44 79 4292 7473">
+	                    </div>
+            	    </div>
                 </div>
                 <div v-else-if="step == 1">
             	    <h1>test 1</h1>
                 </div>
                 <div v-else-if="step == 2">
-            	     <List :dataName="'experiences'" :name="'Potition'" :data="cvData.experiences"/>
+            	     <List :dataName="'experiences'" :name="'Potition'" :data="data.experiences"/>
                 </div>
                 <div v-else-if="step == 3">
-            	     <List :dataName="'formations'" :name="'Education'" :data="cvData.formations"/>
+            	     <List :dataName="'formations'" :name="'Education'" :data="data.formations"/>
                 </div>
                 <div v-else-if="step == 4">
-            	     <List :dataName="'competencies'" :name="'Skill'" :data="cvData.competencies"/>
+            	     <List :dataName="'competencies'" :name="'Skill'" :data="data.competencies"/>
                 </div>
                 <div v-else-if="step == 5">
-                  	<List :dataName="'languages'" :name="'Languages'" :data="cvData.languages"/>
+                  	<List :dataName="'languages'" :name="'Languages'" :data="data.languages"/>
                 </div>
                 <div v-else-if="step == 6">
-            	    <List :dataName="'interests'" :name="'interests'" :data="cvData.interests"/>
+            	    <List :dataName="'interests'" :name="'interests'" :data="data.interests"/>
                 </div>
 			</div>
        </div>
@@ -50,10 +78,9 @@
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
     
     let step = ref(0);
-   // let dataName = ref('');
     let currentStepName = ref('')
-    //let value = ref('');
-    const cvData = computed(() => store.getters.getCvData)
+
+    const data = computed(() => store.getters.getCvData)
 	const currentStep = computed(() => store.getters.getCurrentStep);
 	const goToSection = (val) => {
 		step.value += val

@@ -8,7 +8,15 @@ const defultCvData = {
 	experiences: [],
 	competencies: [],
 	formations: [],
-	identity: {},
+	identity: {
+		address: '',
+        checkbox1: false,
+        driving_licence: '',
+        email: '',
+        first_name: '',
+        last_name: '',
+        phone: '',
+	},
 	interests: [],
 	languages: [],
 }
@@ -20,17 +28,25 @@ const store = createStore({
 		step: 0,
 		isSaved: false,
 		data: {
-				name: 'My Cv',
-	customFontSize: '13px',
-	customColor: '#3870b1',
-	interestsDisplay: false,
-	experiences: [],
-	competencies: [],
-	formations: [],
-	identity: {},
-	interests: [],
-	languages: [],
-		}
+	        name: 'My Cv',
+	        customFontSize: '13px',
+	        customColor: '#3870b1',
+	        interestsDisplay: false,
+	        experiences: [],
+	        competencies: [],
+	        formations: [],
+	        identity: {
+		        address: '',
+                checkbox1: false,
+                driving_licence: '',
+                email: '',
+                first_name: '',
+                last_name: '',
+                phone: '',
+	        },
+	        interests: [],
+	        languages: [],
+         }
 	},
 
 	getters: {

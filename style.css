@@ -29,3 +29,7 @@
 .mobileMenuList {
     @apply w-full h-14 py-2 px-4 flex items-center border-b border-borderColor cursor-pointer
 }
+
+.inputStyle {
+    @apply w-full h-14 px-3.5  outline-0 rounded border border-borderColor rounded focus-within:border-[#4372FF] hover:border-black hover:focus-within:border-[#4372FF]
+}
