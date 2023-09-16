@@ -4,6 +4,9 @@
 			<MobileMenu v-show="openMobileMenu"/>
 			<div class="py-6 px-4 xl:py-2 xl:px-8" v-show="!openMobileMenu">
 				<div v-if="step == 0">
+					<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
+			           <h2>Personal details</h2>
+		            </div>
 					<div class="flex flex-row mb-5">
 						<div class="w-48 h-44 bg-blue-100 mr-5 flex items-center justify-between ">
 							img
@@ -35,17 +38,29 @@
             	    </div>
                 </div>
                 <div v-else-if="step == 1">
-            	    <h1>test 1</h1>
+            	   <div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
+			           <h2>Summary</h2>
+		            </div>
                 </div>
-                <div v-else-if="step == 2">
-            	     <List :dataName="'experiences'" :name="'Potition'" :data="data.experiences"/>
+                <div v-else-if="step == 2" class="flex flex-col">
+                	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
+			           <h2>Potition</h2>
+		            </div>
+            	    <List :dataName="'experiences'"  :data="data.experiences"/>
                 </div>
-                <div v-else-if="step == 3">
-            	     <List :dataName="'formations'" :name="'Education'" :data="data.formations"/>
+                <div v-else-if="step == 3" class="flex flex-col">
+                	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
+			           <h2>Education</h2>
+		            </div>
+            	    <List :dataName="'formations'" :data="data.formations"/>
                 </div>
-                <div v-else-if="step == 4">
+                <div v-else-if="step == 4" class="flex flex-col">
+                	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
+			           <h2>Skill</h2>
+		            </div>
+                	  <div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
+            	
             	    <!-- <List :dataName="'competencies'" :name="'Skill'" :data="data.competencies"/>-->
-            	    <div class="w-full h-auto flex flex-col sm:flex-row  bg-red-100 gap-2">
             	    	<div class="w-full  inline-flex flex-col rounded bg-transparent">
 	                        <label>Skill</label>
 	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Project Manager">
@@ -62,10 +77,31 @@
             	    </div>
                 </div>
                 <div v-else-if="step == 5">
-                  	<List :dataName="'languages'" :name="'Languages'" :data="data.languages"/>
+                	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
+			           <h2>Languages</h2>
+		            </div>
+                  	<!--<List :dataName="'languages'" :data="data.languages"/>-->
+                  	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
+            	    	    <div class="w-full  inline-flex flex-col rounded bg-transparent">
+	                            <label>Skill</label>
+	                            <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Project Manager">
+	                        </div>
+	                        <div class="w-full inline-flex flex-col rounded bg-transparent">
+	                            <label>Level</label>
+	                            <select class="inputStyle">
+	                        	    <option>Beginner</option>
+	                        	    <option>Intermediate</option>
+	                        	    <option>Advanced level</option>
+	                        	    <option>Expert</option>
+	                            </select>
+	                        </div>
+            	        </div>
                 </div>
                 <div v-else-if="step == 6">
-            	    <List :dataName="'interests'" :name="'interests'" :data="data.interests"/>
+                	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
+			           <h2>interests</h2>
+		            </div>
+            	    <List :dataName="'interests'" :data="data.interests"/>
                 </div>
 			</div>
        </div>
