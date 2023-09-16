@@ -76,18 +76,13 @@
 	                    </div>
             	    </div>
                 </div>
-                <div v-else-if="step == 5">
+                <div v-else-if="step == 5" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Languages</h2>
 		            </div>
                   	<!--<List :dataName="'languages'" :data="data.languages"/>-->
                   	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
-            	    	    <div class="w-full  inline-flex flex-col rounded bg-transparent">
-	                            <label>Skill</label>
-	                            <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Project Manager">
-	                        </div>
-	                        <div class="w-full inline-flex flex-col rounded bg-transparent">
-	                            <label>Level</label>
+                  	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                            <select class="inputStyle">
 	                        	    <option>Beginner</option>
 	                        	    <option>Intermediate</option>
@@ -95,13 +90,20 @@
 	                        	    <option>Expert</option>
 	                            </select>
 	                        </div>
+            	    	    <div class="w-full  inline-flex flex-col rounded bg-transparent">
+	                            <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Language">
+	                        </div>
             	        </div>
                 </div>
                 <div v-else-if="step == 6">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>interests</h2>
 		            </div>
-            	    <List :dataName="'interests'" :data="data.interests"/>
+            	    <!--<List :dataName="'interests'" :data="data.interests"/>-->
+            	      <div class="w-6/12  inline-flex flex-col rounded bg-transparent">
+	                            <label>Interest</label>
+	                            <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Interest">
+	                        </div>
                 </div>
 			</div>
        </div>
