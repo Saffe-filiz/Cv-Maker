@@ -44,7 +44,22 @@
             	     <List :dataName="'formations'" :name="'Education'" :data="data.formations"/>
                 </div>
                 <div v-else-if="step == 4">
-            	     <List :dataName="'competencies'" :name="'Skill'" :data="data.competencies"/>
+            	    <!-- <List :dataName="'competencies'" :name="'Skill'" :data="data.competencies"/>-->
+            	    <div class="w-full h-auto flex flex-col sm:flex-row  bg-red-100 gap-2">
+            	    	<div class="w-full  inline-flex flex-col rounded bg-transparent">
+	                        <label>Skill</label>
+	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Project Manager">
+	                    </div>
+	                    <div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Level</label>
+	                        <select class="inputStyle">
+	                        	<option>Beginner</option>
+	                        	<option>Intermediate</option>
+	                        	<option>Advanced level</option>
+	                        	<option>Expert</option>
+	                        </select>
+	                    </div>
+            	    </div>
                 </div>
                 <div v-else-if="step == 5">
                   	<List :dataName="'languages'" :name="'Languages'" :data="data.languages"/>
