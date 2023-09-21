@@ -37,10 +37,6 @@
 	                        <input type="tel" name="phone" class="inputStyle"  autocomplete="off" placeholder="+44 79 4292 7473" v-model="idantity.phone">
 	                    </div>
             	    </div>
-            	    <div class="w-full h-14  mt-6 flex gap-x-3">
-            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
-            	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
-            	    </div>
                 </div>
                 <div v-else-if="step == 1">
             	   <div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
@@ -55,7 +51,7 @@
 			           <h2>Potition</h2>
 		            </div>
             	    <!--<List :dataName="'experiences'"  :data="data.experiences"/>-->
-            	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-10">
+            	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
             	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <label>Position</label>
 	                        <input type="text" name="position" class="inputStyle"  autocomplete="off" placeholder="Product Manager" >
@@ -65,7 +61,7 @@
 	                         <input type="text" name="company" class="inputStyle"  autocomplete="off" placeholder="Deliveroo">
 	                    </div>
             	    </div>
-            	     <div class="w-full inline-flex flex-col rounded bg-transparent mb-10">
+            	     <div class="w-full inline-flex flex-col rounded bg-transparent mb-5">
 	                    <label>Location</label>
 	                    <input type="text" name="location" class="inputStyle"  autocomplete="off" placeholder="Location">
 	                </div>
@@ -80,12 +76,42 @@
 	                         <input type="date" name="company" class="inputStyle"  autocomplete="off" placeholder="10/2022">
 	                    </div>
             	    </div>
+            	      <div class="w-full h-14  mt-6 flex gap-x-3">
+            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
+            	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
+            	    </div>
                 </div>
                 <div v-else-if="step == 3" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Education</h2>
 		            </div>
             	    <!--<List :dataName="'formations'" :data="data.formations"/>-->
+            	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
+            	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Name of the institution</label>
+	                        <input type="text" name="nameOfInstitution" class="inputStyle"  autocomplete="off" placeholder="University of Bristol" >
+	                    </div>
+	                    <div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Degree</label>
+	                         <input type="text" name="degree" class="inputStyle"  autocomplete="off" placeholder="BSc Marketing">
+	                    </div>
+            	    </div>
+            	    <div class="w-full">Not obtained yet</div>
+            	     <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
+            	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Location</label>
+	                        <input type="text" name="Location" class="inputStyle"  autocomplete="off" placeholder="Bristol" >
+	                    </div>
+	                    <div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Graduation year</label>
+	                         <input type="date" class="inputStyle" autocomplete="off" placeholder="yyy" value="2023">
+	                    </div>
+            	    </div>
+
+            	      <div class="w-full h-14  mt-6 flex gap-x-3">
+            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
+            	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
+            	    </div>
                 </div>
                 <div v-else-if="step == 4" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
