@@ -46,18 +46,46 @@
             	   <div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Summary</h2>
 		            </div>
+		            <div class="w-full h-auto">
+		            	<p>Write 2-4 short & energetic sentences to interest the reader! Mention your role, experience & most importantly - your biggest achievements, best qualities and skills</p>
+		            </div>
                 </div>
                 <div v-else-if="step == 2" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Potition</h2>
 		            </div>
-            	    <List :dataName="'experiences'"  :data="data.experiences"/>
+            	    <!--<List :dataName="'experiences'"  :data="data.experiences"/>-->
+            	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-10">
+            	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Position</label>
+	                        <input type="text" name="position" class="inputStyle"  autocomplete="off" placeholder="Product Manager" >
+	                    </div>
+	                    <div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Company</label>
+	                         <input type="text" name="company" class="inputStyle"  autocomplete="off" placeholder="Deliveroo">
+	                    </div>
+            	    </div>
+            	     <div class="w-full inline-flex flex-col rounded bg-transparent mb-10">
+	                    <label>Location</label>
+	                    <input type="text" name="location" class="inputStyle"  autocomplete="off" placeholder="Location">
+	                </div>
+	                <div class="w-full mb-4">Current position</div>
+	                 <div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
+            	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Position</label>
+	                        <input type="date" name="position" class="inputStyle"  autocomplete="off" placeholder="10/2021" >
+	                    </div>
+	                    <div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <label>Company</label>
+	                         <input type="date" name="company" class="inputStyle"  autocomplete="off" placeholder="10/2022">
+	                    </div>
+            	    </div>
                 </div>
                 <div v-else-if="step == 3" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Education</h2>
 		            </div>
-            	    <List :dataName="'formations'" :data="data.formations"/>
+            	    <!--<List :dataName="'formations'" :data="data.formations"/>-->
                 </div>
                 <div v-else-if="step == 4" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
@@ -80,35 +108,43 @@
 	                        </select>
 	                    </div>
             	    </div>
+            	    <div class="w-full h-14  mt-6 flex gap-x-3">
+            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
+            	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
+            	    </div>
                 </div>
                 <div v-else-if="step == 5" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Languages</h2>
 		            </div>
                   	<!--<List :dataName="'languages'" :data="data.languages"/>-->
-                  	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
-                  	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
-	                            <select class="inputStyle">
-	                        	    <option>Beginner</option>
-	                        	    <option>Intermediate</option>
-	                        	    <option>Advanced level</option>
-	                        	    <option>Expert</option>
-	                            </select>
-	                        </div>
-            	    	    <div class="w-full  inline-flex flex-col rounded bg-transparent">
-	                            <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Language">
-	                        </div>
-            	        </div>
+                  	<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
+                  	    <div class="w-full inline-flex flex-col rounded bg-transparent">
+	                        <select class="inputStyle">
+	                        	<option>Beginner</option>
+	                        	<option>Intermediate</option>
+	                        	<option>Advanced level</option>
+	                        	<option>Expert</option>
+	                        </select>
+	                     </div>
+            	    	<div class="w-full  inline-flex flex-col rounded bg-transparent">
+	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Language">
+	                    </div>
+            	   </div>
+            	    <div class="w-full h-14  mt-6 flex gap-x-3">
+            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
+            	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
+            	    </div>
                 </div>
                 <div v-else-if="step == 6">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>interests</h2>
 		            </div>
             	    <!--<List :dataName="'interests'" :data="data.interests"/>-->
-            	      <div class="w-6/12  inline-flex flex-col rounded bg-transparent">
-	                            <label>Interest</label>
-	                            <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Interest">
-	                        </div>
+            	    <div class="w-6/12  inline-flex flex-col rounded bg-transparent">
+	                    <label>Interest</label>
+	                    <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Interest">
+	                </div>
                 </div>
 			</div>
        </div>
