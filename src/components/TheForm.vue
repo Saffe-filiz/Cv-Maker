@@ -36,6 +36,10 @@
 	                        <input type="tel" name="phone" class="inputStyle"  autocomplete="off" placeholder="+44 79 4292 7473" v-model="idantity.phone">
 	                    </div>
             	    </div>
+            	    <div class="w-full h-14  mt-6 flex gap-x-3">
+            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form">OK</button>
+            	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
+            	    </div>
                 </div>
                 <div v-else-if="step == 1">
             	   <div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
