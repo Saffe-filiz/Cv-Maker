@@ -13,8 +13,8 @@ const defultCvData = {
         checkbox1: false,
         driving_licence: '',
         email: '',
-        first_name: '',
-        last_name: '',
+        first_name: 'test',
+        last_name: 'test',
         phone: '',
 	},
 	interests: [],
@@ -63,6 +63,7 @@ const store = createStore({
 		getCvData: state => state.data,
 
 		getIsSaved: state => state.isSaved,
+
 	},
 
 	mutations: {
@@ -100,6 +101,10 @@ const store = createStore({
 
 	    setNewData ( state, name ) {
 	    	state.data[name].push({one: [state.data[name].length]})
+	    },
+
+	    setIdentity ( state, obj) {
+	    	state.data.identity = obj
 	    }
 
 

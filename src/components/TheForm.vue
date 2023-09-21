@@ -14,11 +14,12 @@
 						<div class="w-[calc(100%_-_200px)] flex flex-col gap-y-2">
 							<div class="flex flex-col rounded bg-transparent">
 	                            <label>First Name</label>
-	                            <input type="text" name="name" class="inputStyle" autocomplete="off" placeholder="Bob"  v-model="idantity.first_name">
+	                            <input type="text" name="name" class="inputStyle" autocomplete="off" placeholder="Bob" v-model="idantity.first_name">
 	                        </div>
 	                        <div class="flex flex-col rounded bg-transparent">
 	                            <label>Surename</label>
-	                            <input type="text" name="surename" class="inputStyle"  autocomplete="off" placeholder="Marley" v-model="idantity.last_name">
+	                            <input type="text" name="surename" class="inputStyle"  autocomplete="off" placeholder="Marley" v-model="idantity.last_name"
+	                            >
 	                        </div>
 						</div>
 					</div>
@@ -37,7 +38,7 @@
 	                    </div>
             	    </div>
             	    <div class="w-full h-14  mt-6 flex gap-x-3">
-            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form">OK</button>
+            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
             	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
             	    </div>
                 </div>
@@ -129,7 +130,7 @@
 	import List from './List.vue';
 
 	import { useStore } from 'vuex';
-	import { computed, ref, watch, reactive } from 'vue';
+	import { computed, ref, watch, reactive, onMounted } from 'vue';
 
 	const store = useStore();
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
@@ -147,14 +148,22 @@
                 phone: '',
 	        })
 
+
+    onMounted(() => {
+    	idantity = data.value.identity
+    	console.log(idantity)
+    })
+
     const data = computed(() =>  store.getters.getCvData)
 	const currentStep = computed(() => store.getters.getCurrentStep);
+
 	const goToSection = (val) => {
 		step.value += val
 	    store.commit('setCurrentStep', step.value)
 	};
-    
 
+
+    const updateIdantity = () => store.commit('setIdentity', idantity)
 
     const addNew = () => store.commit('setNewData', dataName.value);
 
