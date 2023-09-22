@@ -200,7 +200,7 @@
     let step = ref(0);
     let currentStepName = ref('')
 
-    let idantity = reactive( {
+    let idantity = ref( {
 		        address: '',
                 checkbox1: false,
                 driving_licence: '',
@@ -212,7 +212,7 @@
 
 
     onMounted(() => {
-    	idantity = data.value.identity
+    	idantity.value = data.value.identity
     	console.log(idantity)
     })
 
