@@ -143,8 +143,9 @@
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Languages</h2>
 		            </div>
-                  	<!--<List :dataName="'languages'" :data="data.languages"/>-->
-                  	<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
+                  	<List :dataName="'languages'" :data="data.languages"/>
+                  	<!--<div>
+                  		<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
                   	    <div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <select class="inputStyle">
 	                        	<option>Beginner</option>
@@ -161,6 +162,7 @@
             	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
             	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
             	    </div>
+                  	</div>-->
                 </div>
                 <div v-else-if="step == 6">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
@@ -198,6 +200,14 @@
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
     
     let step = ref(0);
+    let currectForm = reactive({
+    	2: 0,
+    	3: 0,
+    	4: 0,
+    	5: 0,
+    	6: 0,
+
+    })
     let currentStepName = ref('')
 
     let idantity = ref( {
