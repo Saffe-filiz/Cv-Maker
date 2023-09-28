@@ -50,7 +50,7 @@
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Potition</h2>
 		            </div>
-            	    <!--<List :dataName="'experiences'"  :data="data.experiences"/>-->
+            	    <!--<List :name="'experiences'"  :data="data.experiences"/>-->
             	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
             	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <label>Position</label>
@@ -85,7 +85,7 @@
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Education</h2>
 		            </div>
-            	    <!--<List :dataName="'formations'" :data="data.formations"/>-->
+            	    <!--<List :name="'formations'" :data="data.formations"/>-->
             	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
             	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <label>Name of the institution</label>
@@ -119,7 +119,7 @@
 		            </div>
                 	  <div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
             	
-            	    <!-- <List :dataName="'competencies'" :name="'Skill'" :data="data.competencies"/>-->
+            	    <!-- <List :name="'competencies'" :name="'Skill'" :data="data.competencies"/>-->
             	    	<div class="w-full  inline-flex flex-col rounded bg-transparent">
 	                        <label>Skill</label>
 	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Project Manager">
@@ -143,7 +143,7 @@
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>Languages</h2>
 		            </div>
-                  	<List :dataName="'languages'" :data="data.languages"/>
+                  	<List :name="'languages'" :data="data.languages"/>
                   	<!--<div>
                   		<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
                   	    <div class="w-full inline-flex flex-col rounded bg-transparent">
@@ -168,7 +168,7 @@
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
 			           <h2>interests</h2>
 		            </div>
-            	    <!--<List :dataName="'interests'" :data="data.interests"/>-->
+            	    <!--<List :name="'interests'" :data="data.interests"/>-->
             	    <div class="w-6/12  inline-flex flex-col rounded bg-transparent">
 	                    <label>Interest</label>
 	                    <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Interest">

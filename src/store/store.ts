@@ -100,7 +100,34 @@ const store = createStore({
 	    },
 
 	    setNewData ( state, name ) {
-	    	state.data[name].push({one: [state.data[name].length]})
+	    let forms = {
+	    	experiences :{
+    	        city: "",
+                company: "",
+                description: "",
+                end_date: "",
+                not_over: false,
+                start_date: "",
+                title: ""},
+            formations: {
+    	        city: "",
+                description: "",
+                diploma: "",
+                name: "",
+                not_obtained_yet: false,
+                year: "", 
+            },
+            competencies: { 
+            	level: "", 
+            	name: "", },
+            languages: {
+            	level: "test",
+       	        name: "test",}, 
+       	    interests: {
+       	        	name: ""
+       	        }
+       	     }
+	    	state.data[name].push(forms[name])
 	    },
 
 	    setIdentity ( state, obj) {
