@@ -151,7 +151,7 @@
 			           <h2 v-if="currectForm[5]">Languages</h2>
 			           <h2 v-else class="text-brandColor cursor-pointer" @click="currectForm[5] = true"> Languages</h2>
 		            </div>
-                  	<List :name="'languages'" :data="data.languages" v-if="currectForm[5]"/>
+                  	<List v-if="currectForm[5]" :name="'languages'" :data="data.languages"/>
                   	<div  v-else>
                   		<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
                   	    <div class="w-full inline-flex flex-col rounded bg-transparent">
@@ -174,12 +174,19 @@
                 </div>
                 <div v-else-if="step == 6">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
-			           <h2>interests</h2>
+			           <h2 v-if="currectForm[6]">interests</h2>
+			           <h2 v-else class="text-brandColor cursor-pointer" @click="currectForm[6] = true">interests</h2>
 		            </div>
-            	    <!--<List :name="'interests'" :data="data.interests"/>-->
+            	    <List v-if="currectForm[6]" :name="'interests'" :data="data.interests"/>
+            	    <div v-else>
             	    <div class="w-6/12  inline-flex flex-col rounded bg-transparent">
 	                    <label>Interest</label>
 	                    <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Interest">
+	                </div>
+	                <div class="w-full h-14  mt-6 flex gap-x-3">
+            	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
+            	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
+            	    </div>
 	                </div>
                 </div>
 			</div>
