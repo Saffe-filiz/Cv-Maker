@@ -115,12 +115,13 @@
                 </div>
                 <div v-else-if="step == 4" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
-			           <h2>Skill</h2>
+			           <h2 v-if="currectForm[4]">Skill</h2>
+			           <h2 v-else class="text-brandColor cursor-pointer" @click="currectForm[4] = true"> Skill</h2>
 		            </div>
-                	  <div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
-            	
-            	    <!-- <List :name="'competencies'" :name="'Skill'" :data="data.competencies"/>-->
-            	    	<div class="w-full  inline-flex flex-col rounded bg-transparent">
+		            <List v-if="currectForm[4]" :name="'competencies'"  :data="data.competencies"/>
+                    <div v-else>
+                		<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
+            	        <div class="w-full  inline-flex flex-col rounded bg-transparent">
 	                        <label>Skill</label>
 	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Project Manager">
 	                    </div>
@@ -138,13 +139,15 @@
             	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
             	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
             	    </div>
+            	</div>
                 </div>
                 <div v-else-if="step == 5" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
-			           <h2>Languages</h2>
+			           <h2 v-if="currectForm[5]">Languages</h2>
+			           <h2 v-else class="text-brandColor cursor-pointer" @click="currectForm[5] = true"> Languages</h2>
 		            </div>
-                  	<List :name="'languages'" :data="data.languages"/>
-                  	<!--<div>
+                  	<List :name="'languages'" :data="data.languages" v-if="currectForm[5]"/>
+                  	<div  v-else>
                   		<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
                   	    <div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <select class="inputStyle">
@@ -162,7 +165,7 @@
             	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
             	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
             	    </div>
-                  	</div>-->
+                  	</div>
                 </div>
                 <div v-else-if="step == 6">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
@@ -203,8 +206,8 @@
     let currectForm = reactive({
     	2: 0,
     	3: 0,
-    	4: 0,
-    	5: 0,
+    	4: false,
+    	5: false,
     	6: 0,
 
     })
@@ -219,7 +222,8 @@
                 last_name: '',
                 phone: '',
 	        })
-
+    
+    const updateIdantity = () => store.commit('setIdentity', idantity);
 
     onMounted(() => {
     	idantity.value = data.value.identity
@@ -235,36 +239,10 @@
 	};
 
 
-    const updateIdantity = () => store.commit('setIdentity', idantity)
 
-    const addNew = () => store.commit('setNewData', dataName.value);
+    //const addNew = () => store.commit('setNewData', dataName.value);
 
-	watch(() => currentStep.value, (num) => {
-		step.value = num
-		/*switch(num){
-		case 2:
-		   dataName.value = 'experiences';
-		   currentStepName.value = 'Potition'
-		   break;
-		case 3:
-			dataName.value = 'formations';
-			currentStepName.value = 'Education'
-			break;
-		case 4:
-		    dataName.value = 'competencies';
-		    currentStepName.value = 'Skill'
-		    break;
-		 case 5: 
-		    dataName.value = 'languages';
-		    currentStepName.value = 'Languages'
-		    break;
-		 case 6:
-		 	dataName.value = 'interests';
-		 	currentStepName.value = 'Interests'
-
-		};*/
-
-	})
+	watch(() => currentStep.value, (num) => step.value = num)
 
 
 </script>
