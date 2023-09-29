@@ -48,9 +48,11 @@
                 </div>
                 <div v-else-if="step == 2" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
-			           <h2>Potition</h2>
+			           <h2 v-if="currectForm[2]">Potition</h2>
+			           <h2 v-else class="text-brandColor cursor-pointer" @click="currectForm[2] = true">Potition</h2>
 		            </div>
-            	    <!--<List :name="'experiences'"  :data="data.experiences"/>-->
+            	    <List v-if="currectForm[2]" :name="'experiences'"  :data="data.experiences"/>
+            	    <div v-else>
             	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
             	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <label>Position</label>
@@ -80,12 +82,15 @@
             	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
             	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
             	    </div>
+            	   </div>
                 </div>
                 <div v-else-if="step == 3" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
-			           <h2>Education</h2>
+			           <h2 v-if="currectForm[3]">Education</h2>
+			           <h2 v-else class="text-brandColor cursor-pointer" @click="currectForm[3] = true">Education</h2>
 		            </div>
-            	    <!--<List :name="'formations'" :data="data.formations"/>-->
+            	    <List v-if="currectForm[3]" :name="'formations'" :data="data.formations"/>
+            	    <div v-else>
             	    <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
             	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <label>Name of the institution</label>
@@ -107,11 +112,11 @@
 	                         <input type="date" class="inputStyle" autocomplete="off" placeholder="yyy" value="2023">
 	                    </div>
             	    </div>
-
-            	      <div class="w-full h-14  mt-6 flex gap-x-3">
+            	    <div class="w-full h-14  mt-6 flex gap-x-3">
             	    	<button class="h-10 px-6 bg-brandColor rounded bg-brandColor text-white shadow-form" @click="updateIdantity">OK</button>
             	    	<button class="h-10 px-6 bg-white rounded text-brandColor shadow-form">Delet</button>
             	    </div>
+            	</div>
                 </div>
                 <div v-else-if="step == 4" class="flex flex-col">
                 	<div class="w-full h-20 pt-6 flex items-center text-xl font-bold hidden xl:block">
