@@ -155,7 +155,7 @@
                   	<div  v-else>
                   		<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
                   	    <div class="w-full inline-flex flex-col rounded bg-transparent">
-	                        <select class="inputStyle">
+	                        <select class="inputStyle" v-model="languages[0].level">
 	                        	<option>Beginner</option>
 	                        	<option>Intermediate</option>
 	                        	<option>Advanced level</option>
@@ -163,7 +163,7 @@
 	                        </select>
 	                     </div>
             	    	<div class="w-full  inline-flex flex-col rounded bg-transparent">
-	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Language">
+	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Language" v-model="languages[0].name">
 	                    </div>
             	   </div>
             	    <div class="w-full h-14  mt-6 flex gap-x-3">
@@ -214,32 +214,39 @@
 	const store = useStore();
 	const openMobileMenu = computed(() => store.getters.getMobileMenu);
     
-    let step = ref(0);
-    let currectForm = reactive({
-    	2: 0,
-    	3: 0,
-    	4: false,
-    	5: false,
-    	6: 0,
+    const step = ref(0);
+    const currectForm = reactive({
+    	2: true,
+    	3: true,
+    	4: true,
+    	5: true,
+    	6: true,
 
     })
-    let currentStepName = ref('')
+    const currentStepName = ref('')
 
-    let idantity = ref( {
-		        address: '',
-                checkbox1: false,
-                driving_licence: '',
-                email: '',
-                first_name: '',
-                last_name: '',
-                phone: '',
-	        })
+    const idantity = ref( {
+		    address: '',
+            checkbox1: false,
+            driving_licence: '',
+            email: '',
+            first_name: '',
+            last_name: '',
+            phone: '',
+	    });
+
+    
+    const languages = ref({
+    	    level: '',
+       	    name: '',
+        })
     
     const updateIdantity = () => store.commit('setIdentity', idantity);
 
     onMounted(() => {
     	idantity.value = data.value.identity
-    	console.log(idantity)
+    	languages.value = data.value.languages[0]
+    	console.log(data.value)
     })
 
     const data = computed(() =>  store.getters.getCvData)
