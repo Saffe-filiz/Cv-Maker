@@ -234,12 +234,40 @@
             last_name: '',
             phone: '',
 	    });
+    
+    const experiences = ref({
+    	    city: '',
+            company: '',
+            description: '',
+            end_date: '',
+            not_over: false,
+            start_date: '',
+            title: '',
+        });
 
+    const formations = ref({
+    	    city: '',
+            description:  '',
+            diploma: '',
+            name: '',
+            not_obtained_yet: false,
+            year:  '', 
+        });
+    
+
+    const competencies = ref({
+    	    level: '',
+       	    name: '',
+        });
     
     const languages = ref({
     	    level: '',
        	    name: '',
         })
+
+    const interests = ref({
+    	    name: '',
+        });
     
     const updateIdantity = () => store.commit('setIdentity', idantity);
 

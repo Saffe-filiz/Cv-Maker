@@ -108,7 +108,8 @@ const store = createStore({
                 end_date: "",
                 not_over: false,
                 start_date: "",
-                title: ""},
+                title: ""
+            },
             formations: {
     	        city: "",
                 description: "",
@@ -119,7 +120,8 @@ const store = createStore({
             },
             competencies: { 
             	level: "", 
-            	name: "", },
+            	name: "", 
+            },
             languages: {
             	level: "test",
        	        name: "test",
