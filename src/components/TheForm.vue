@@ -272,9 +272,12 @@
     const updateIdantity = () => store.commit('setIdentity', idantity);
 
     onMounted(() => {
-    	idantity.value = data.value.identity
-    	languages.value = data.value.languages[0]
-    	console.log(data.value)
+    	idantity.value = data.value.identity;
+    	experiences.value = data.value.experiences[0]
+    	formations.value = data.value.formations[0];
+    	competencies.value =  data.value.competencies[0];
+    	languages.value = data.value.languages[0];
+    	interests.value = data.value.interests[0];
     })
 
     const data = computed(() =>  store.getters.getCvData)
