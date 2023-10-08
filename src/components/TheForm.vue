@@ -106,8 +106,13 @@
 	                         <input type="text" name="degree" class="inputStyle"  autocomplete="off" placeholder="BSc Marketing">
 	                    </div>
             	    </div>
-            	    <div class="w-full"><input type="checkbox" name="notObtainedYet"> Not obtained yet</div>
-            	     <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
+            	    <div class="w-full">
+            	    	<label class="flex gap-x-2 items-center ">
+	                	    <input class="w-6 h-6 rounded" type="checkbox" name="notObtainedYet" >
+	                	    <p>Not obtained yet</p>
+	                	</label>
+	                </div>
+            	     <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mt-5">
             	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <label>Location</label>
 	                        <input type="text" name="Location" class="inputStyle"  autocomplete="off" placeholder="Bristol" >
@@ -160,7 +165,7 @@
                   	<div  v-else>
                   		<div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
                   	    <div class="w-full inline-flex flex-col rounded bg-transparent">
-	                        <select class="inputStyle" v-model="languages[0].level">
+	                        <select class="inputStyle">
 	                        	<option>Beginner</option>
 	                        	<option>Intermediate</option>
 	                        	<option>Advanced level</option>
@@ -168,7 +173,7 @@
 	                        </select>
 	                     </div>
             	    	<div class="w-full  inline-flex flex-col rounded bg-transparent">
-	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Language" v-model="languages[0].name">
+	                        <input type="text" name="phone" class="inputStyle"  autocomplete="off" placeholder="Language" >
 	                    </div>
             	   </div>
             	    <div class="w-full h-14  mt-6 flex gap-x-3">
@@ -222,10 +227,10 @@
     const step = ref(0);
     const currectForm = reactive({
     	2: false,
-    	3: true,
-    	4: true,
-    	5: true,
-    	6: true,
+    	3: false,
+    	4: false,
+    	5: false,
+    	6: false,
 
     })
     const currentStepName = ref('')
