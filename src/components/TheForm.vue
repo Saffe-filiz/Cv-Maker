@@ -67,7 +67,12 @@
 	                    <label>Location</label>
 	                    <input type="text" name="location" class="inputStyle"  autocomplete="off" placeholder="Location">
 	                </div>
-	                <div class="w-full mb-4">Current position</div>
+	                <div class="w-full mb-4">
+	                	<label class="flex gap-x-2 items-center ">
+	                	    <input class="w-6 h-6 rounded" type="checkbox" name="currentPosition" >
+	                	    <p>Current position</p>
+	                	</label>
+	                </div>
 	                 <div class="w-full h-auto flex flex-col sm:flex-row  gap-2">
             	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <label>Position</label>
@@ -101,7 +106,7 @@
 	                         <input type="text" name="degree" class="inputStyle"  autocomplete="off" placeholder="BSc Marketing">
 	                    </div>
             	    </div>
-            	    <div class="w-full">Not obtained yet</div>
+            	    <div class="w-full"><input type="checkbox" name="notObtainedYet"> Not obtained yet</div>
             	     <div class="w-full h-auto flex flex-col sm:flex-row  gap-2 mb-5">
             	    	<div class="w-full inline-flex flex-col rounded bg-transparent">
 	                        <label>Location</label>
@@ -216,7 +221,7 @@
     
     const step = ref(0);
     const currectForm = reactive({
-    	2: true,
+    	2: false,
     	3: true,
     	4: true,
     	5: true,
