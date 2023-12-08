@@ -23,6 +23,21 @@
 		switch(step.name){
 		case 'experiences':
 			return ['Front End Developer', 'X']
+		break;
+	    case 'formations':
+	    	return ['Marmara University', '']
+	    break;
+	    case 'competencies':
+	    	return ['Project management', 'Expert']
+	    break;
+	    case 'languages':
+	    	return ['English', 'Native']
+	    break;
+	    case 'interests':
+	    	return ['Video Game']
+	    break;
+	    default:
+	    	console.log('ᓚᘏᗢ')
 		}
 	})
 

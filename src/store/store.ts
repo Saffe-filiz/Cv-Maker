@@ -123,8 +123,8 @@ const store = createStore({
             	name: "", 
             },
             languages: {
-            	level: "test",
-       	        name: "test",
+            	level: "",
+       	        name: "",
        	    }, 
        	    interests: {
        	        	name: ""
