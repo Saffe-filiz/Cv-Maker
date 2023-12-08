@@ -1,10 +1,11 @@
 <template>
 	<div class="w-full h-full">
 		<ul class="pb-4">
-		     <li class="w-full h-14 bg-white py-2 pl-4 pr-12 mb-4 flex items-center rounded border border-borderColor flex items-center justify-between cursor-pointer" 
+		     <li class="w-full h-14  bg-white py-2 pl-4 pr-12 mb-4 flex items-center rounded border border-borderColor flex items-center justify-between cursor-pointer" 
 		     v-for="(data, index) in step.data"
 		     :key="index">
-		     	{{data.name || step.name}}
+		     	{{data.name || defultName[0]}} <br>
+		     	{{data.description ||  data.level || defultName[1]}}
 		     	<button @click="deletListItem(index)">delet</button>
 		     </li>
 	    </ul>
@@ -25,7 +26,7 @@
 			return ['Front End Developer', 'X']
 		break;
 	    case 'formations':
-	    	return ['Marmara University', '']
+	    	return ['Marmara University', 'Developer']
 	    break;
 	    case 'competencies':
 	    	return ['Project management', 'Expert']

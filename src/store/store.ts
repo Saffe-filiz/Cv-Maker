@@ -104,7 +104,7 @@ const store = createStore({
 	    	experiences :{
     	        city: "",
                 company: "",
-                description: "",
+                description: "test",
                 end_date: "",
                 not_over: false,
                 start_date: "",
@@ -119,11 +119,11 @@ const store = createStore({
                 year: "", 
             },
             competencies: { 
-            	level: "", 
+            	level: "2", 
             	name: "", 
             },
             languages: {
-            	level: "",
+            	level: "1",
        	        name: "",
        	    }, 
        	    interests: {
